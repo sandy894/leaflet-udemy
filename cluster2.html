@@ -229,16 +229,11 @@
 			var min = 0;
 			var max = 0;
 			
-			var markers = L.markerClusterGroup();
+			var markers = L.markerClusterGroup({
 			iconCreateFunction: function(cluster) {
-					return L.divIcon({ html: '<div class="clusterdiv"><b>' + cluster.getChildCount() + '</b></div>' }
-				},
-					 polygonoptions : {
-					weight: 0.5,
-					color: 'black'
-							 }			 
-				});
-				
+					return L.divIcon({ html: '<div class="clusterdiv"><b>' + cluster.getChildCount() + '</b></div>' });
+	}
+});
 				
 				
 			json.features.forEach(function(feature) {
