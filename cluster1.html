@@ -216,7 +216,7 @@
 			
 			var markers = L.markerClusterGroup();
 			json.features.forEach(function(feature) {
-				markers.addLayer(L.marker([feature.geometry.coordinates[1],[feature.geometry.coordinates[0] ]));
+				markers.addLayer(L.marker([feature.geometry.coordinates[1],feature.geometry.coordinates[0] ]));
 			})
 			map.addLayer(markers);
 			
