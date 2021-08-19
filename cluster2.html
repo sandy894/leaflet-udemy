@@ -72,6 +72,21 @@
 		#slider {
 			margin-top: 50px;
 		}
+		.clusterdiv {
+			padding: 5px;
+			border-radius: 100px;
+			width: 17px;
+			height: 17px;
+			text-align:center;
+			margin-left: -10px;
+			margin-top: -10px;
+			background: white;
+			box-shadow: 2px 2px 2px gray;
+			}
+		.leaflet-marker-icon {
+			background: none;
+			border: none;
+			}
 		</style>
 
 
@@ -215,6 +230,17 @@
 			var max = 0;
 			
 			var markers = L.markerClusterGroup();
+			iconCreateFunction: function(cluster) {
+					return L.divIcon({ html: '<div class="clusterdiv"><b>' + cluster.getChildCount() + '</b></div>' }
+				},
+					 polygonoptions : {
+					weight: 0.5,
+					color: 'black'
+							 }			 
+				});
+				
+				
+				
 			json.features.forEach(function(feature) {
 				markers.addLayer(L.marker([feature.geometry.coordinates[1],feature.geometry.coordinates[0] ]));
 			})
