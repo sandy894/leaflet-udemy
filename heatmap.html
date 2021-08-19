@@ -214,7 +214,7 @@
 			var max = 0;
 			var heapMapPoints = [];
 			json.features.forEach(function(feature) {
-			heapMapPoints.push([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], features.properties.mag);
+			heapMapPoints.push([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], feature.properties.mag);
 				});
 			var heat = L.heatLayer(heapMapPoints, {
 					       radius: 25,
