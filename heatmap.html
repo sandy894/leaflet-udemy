@@ -216,7 +216,11 @@
 			json.features.forEach(function(feature) {
 			heapMapPoints.push([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], features.properties.mag);
 				});
-			var heat = L.heatLayer(heapMapPoints, {radius: 25}).addTo(map);
+			var heat = L.heatLayer(heapMapPoints, {
+					       radius: 25,
+					      gradient : {0.4: 'blue', 0.65: 'lime', 1: 'red'}
+
+					       } ).addTo(map);
 			
 			
 
