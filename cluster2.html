@@ -232,8 +232,12 @@
 			var markers = L.markerClusterGroup({
 			iconCreateFunction: function(cluster) {
 					return L.divIcon({ html: '<div class="clusterdiv"><b>' + cluster.getChildCount() + '</b></div>' });
-	}
-});
+			},
+					polygonoptions : {
+						weight : 0.5,
+						color : 'black'
+			}
+			});
 				
 				
 			json.features.forEach(function(feature) {
